@@ -34,9 +34,24 @@ pip install fastapi uvicorn scikit-learn pandas numpy joblib
 
 ## 🧠 ML Model Structure
 
-- `flood_risk_model.pkl`: Trained classifier model (e.g., RandomForest, DecisionTree)
+- `flood_risk_model.pkl`: Trained classifier model. This project uses a **Random Forest classifier**. Random Forest was chosen because it performs well on complex datasets, can capture non-linear relationships between features and the target, and is generally robust to outliers.
 - `label_encoder.pkl`: LabelEncoder used to encode/decode risk levels
 - `augmented_flood_dataset.csv`: Dataset with districts and their average monthly rainfall (JAN_normal to DEC_normal)
+
+### Model Performance
+
+The performance of the Random Forest model on the test set is as follows:
+
+```
+             precision    recall  f1-score   support
+
+         Low       0.78      0.63      0.70        73
+      Medium       0.61      0.77      0.68        56
+
+    accuracy                           0.69       129
+   macro avg       0.70      0.70      0.69       129
+weighted avg       0.71      0.69      0.69       129
+```
 
 ---
 
